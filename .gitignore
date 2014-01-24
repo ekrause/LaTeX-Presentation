@@ -1,0 +1,17 @@
+# OS X stuff
+.DS_Store
+
+# LaTeX generated files
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.pdf
+
+# Other
+
+# ignore various notes in repo
+*.txt
