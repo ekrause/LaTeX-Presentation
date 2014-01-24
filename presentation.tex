@@ -25,7 +25,7 @@
             numbersep=3pt, 
             literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 , 
             breaklines=true, 
-            morekeywords={maketitle, subsubsection, subsection, thesection,}
+            morekeywords={maketitle, subsubsection, subsection, thesection, lstinputlisting}
         }
 
 % define some commands
@@ -330,7 +330,19 @@
     \note{The verbatim environment is useful for non-formatted text like console output but with listings you will get beautiful syntax highlighting that looks good printed in color or b/w, or on screen}
 \end{frame}
 
-\codeframe{Listing Example}{9-listing}{R}{}
+%\codeframe{Listing Example}{9-listings}{3}{20}
+\begin{frame} \frametitle{Preferred Listing Settings}
+    \textbf{Source}\\
+    \lstinputlisting[firstline=3, lastline=20]{Examples/9-listings.tex}
+\end{frame}
+
+\begin{frame} \frametitle{Listings Example}
+	\textbf{Output}\\
+	\begin{center}
+	\includegraphics[width=0.85\textwidth]{Examples/9-listings.png}
+	\end{center}
+\end{frame}
+
 
 \section{BibTex}
 
