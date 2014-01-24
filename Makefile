@@ -1,12 +1,12 @@
 UNAME:=$(shell uname -s)
 ifeq ($(UNAME), Darwin)
 	OPENCMD=open presentation.pdf
+else
+	OPENCMD=
 endif
 
 ifeq ($(UNAME), Linux)
 	OPENCMD=xdg-open presentation.pdf
-else
-	OPENCMD=
 endif
 
 TEX = pdflatex -file-line-error -interaction=nonstopmode
