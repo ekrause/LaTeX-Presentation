@@ -20,9 +20,6 @@ $(DOC).pdf: $(DOC).tex
 	pdflatex -file-line-error -interaction=nonstopmode $(DOC)
 	pdflatex -file-line-error -interaction=nonstopmode $(DOC)
 	$(OPENCMD)
+
 clean:
-	rm $(DOC).aux $(DOC).log $(DOC).out $(DOC).pdf $(DOC).nav $(DOC).snm $(DOC).synctex.gz $(DOC).toc Examples/*.log Examples/*.aux Examples/*.pdf Examples/*.synctex.gz
-
-
-
-
+	rm -f $(DOC).aux $(DOC).log $(DOC).out $(DOC).pdf $(DOC).nav $(DOC).snm $(DOC).synctex.gz $(DOC).toc Examples/*.log Examples/*.aux Examples/*.pdf Examples/*.synctex.gz 
