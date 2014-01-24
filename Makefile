@@ -1,3 +1,14 @@
+UNAME:=$(shell uname -s)
+ifeq ($(UNAME), Darwin)
+	OPENCMD=open presentation.pdf
+endif
+
+ifeq ($(UNAME), Linux)
+	OPENCMD=xdg-open presentation.pdf
+else
+	OPENCMD=
+endif
+
 TEX = pdflatex -file-line-error -interaction=nonstopmode
 BIB = bibtex
 
@@ -8,7 +19,7 @@ all: $(DOC).pdf
 $(DOC).pdf: $(DOC).tex
 	pdflatex -file-line-error -interaction=nonstopmode $(DOC)
 	pdflatex -file-line-error -interaction=nonstopmode $(DOC)
-	open $(DOC).pdf
+	$(OPENCMD)
 clean:
 	rm $(DOC).aux $(DOC).log $(DOC).out $(DOC).pdf $(DOC).nav $(DOC).snm $(DOC).synctex.gz $(DOC).toc Examples/*.log Examples/*.aux Examples/*.pdf Examples/*.synctex.gz
 
