@@ -25,5 +25,12 @@ $(DOC).pdf: $(DOC).tex $(EXFILES)
 open: $(DOC).pdf
 	$(OPENCMD)
 
+bib:
+	-cd Examples && pdflatex 10-bibtex
+	-cd Examples && bibtex 10-bibtex
+	-cd Examples && pdflatex 10-bibtex
+	-cd Examples && pdflatex 10-bibtex
+	-cd Examples && pdflatex 10-bibtex
+
 clean:
-	rm -f $(DOC).aux $(DOC).log $(DOC).out $(DOC).pdf $(DOC).nav $(DOC).snm $(DOC).synctex.gz $(DOC).toc Examples/*.log Examples/*.aux Examples/*.pdf Examples/*.synctex.gz 
+	rm -f $(DOC).aux $(DOC).log $(DOC).out $(DOC).pdf $(DOC).nav $(DOC).snm $(DOC).synctex.gz $(DOC).toc Examples/*.log Examples/*.aux Examples/*.pdf Examples/*.synctex.gz Examples/*.bbl Examples/*.blg Examples/*.dvi 
