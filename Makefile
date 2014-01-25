@@ -9,6 +9,7 @@ else
 endif
 endif
 
+EXFILES = $(wildcard Examples/*.tex)
 
 TEX = pdflatex -file-line-error -interaction=nonstopmode
 BIB = bibtex
@@ -17,9 +18,11 @@ DOC=presentation
 
 all: $(DOC).pdf
 
-$(DOC).pdf: $(DOC).tex
-	pdflatex -file-line-error -interaction=nonstopmode $(DOC)
-	pdflatex -file-line-error -interaction=nonstopmode $(DOC)
+$(DOC).pdf: $(DOC).tex $(EXFILES)
+	$(TEX) $(DOC)
+	$(TEX) $(DOC)
+
+open: $(DOC).pdf
 	$(OPENCMD)
 
 clean:
