@@ -11,6 +11,11 @@
 *.toc
 *.pdf
 
+# BibTeX generated files
+*.bbl
+*.blg
+
+
 # Other
 
 # ignore various notes in repo

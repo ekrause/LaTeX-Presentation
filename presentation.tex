@@ -1,5 +1,5 @@
 \documentclass{beamer}
-
+\usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -15,17 +15,18 @@
 
 
 % Set listings defaults
-\lstset{    language=[LaTeX]TeX, 
+\lstset{    %language=[LaTeX]TeX, 
             basicstyle=\scriptsize, 
             keywordstyle=\bfseries\color{blue}, 
             commentstyle=\it \color{red}, 
             stringstyle=\ttfamily, 
             numbers=left, 
+            alsoletter={\textbackslash}
             numberstyle=\tiny\color{mygray}, 
             numbersep=3pt, 
-            literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 , 
+            literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 {\\}{{{\bf\color{blue}\textbackslash}}}1 {\$}{{{\bf\color{magenta}\$}}}1 {\&}{{{\bf\color{orange}\&}}}1, 
             breaklines=true, 
-            morekeywords={maketitle, subsubsection, subsection, thesection, lstinputlisting}
+            morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \bf, \it, \color, \tiny,\footnotesize, maketitle, subsubsection, subsection, thesection, lstinputlisting, @ARTICLE, AUTHOR, TITLE, JOURNAL, ISSUE, PAGES, VOLUME, YEAR}
         }
 
 % define some commands
@@ -343,8 +344,15 @@
 	\end{center}
 \end{frame}
 
-
 \section{BibTex}
+\begin{frame} \frametitle{Bibliographies with BibTex}
+  \begin{enumerate}
+    \item Create a bibliography (.bib) file\\
+    \lstinputlisting[firstline=6, lastline=14]{Examples/10-bibtex.bib} 
+    \item \href{run:Examples/10-bibtex.bib}{click here}
+  \end{enumerate}
+
+\end{frame}
 
 \section{Useful Packages}
 
