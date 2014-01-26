@@ -26,7 +26,7 @@
             numbersep=3pt, 
             literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 {\\}{{{\bf\color{blue}\textbackslash}}}1 {\$}{{{\bf\color{magenta}\$}}}1 {\&}{{{\bf\color{orange}\&}}}1, 
             breaklines=true, 
-            morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \bf, \it, \color, \tiny,\footnotesize, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
+            morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \bf, \it, \color, \tiny,\footnotesize, \label, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
         }
 
 % define some commands
@@ -360,23 +360,36 @@
 \end{frame}
 
 \begin{frame} \frametitle{Compiling with BibTeX}
-\begin{itemize}
-\item Recommended method, according to \texttt{\href{http://www.bibtex.org/Using/}{www.bibtex.org}}\texttt{\footnotesize\\
-\ \ \ \ 1. pdflatex mydocument\\
-\ \ \ \ 2. bibtex mybib\\
-\ \ \ \ 3. pdflatex mydocument\\
-\ \ \ \ 4. pdflatex mydocument\\
-}
- \item Why?{\footnotesize\\
-\ \ \ \ \ \ 1. document with question marks for unknown references\\
-\ \ \ \ \ \ 2. parse all the .bib files, generate info regarding references\\
-\ \ \ \ \ \ 3. generate document with references in the correct places\\
-\ \ \ \ \ \ 4. just in case if adding references broke page numbering\\
-}
-\item Don't like that?\\
-\ \ \ \ \ \ \texttt{\footnotesize\url{http://users.phys.psu.edu/~collins/latexmk/}}
-\item Examples:  \texttt{\href{run:Examples/10-bibtex.bib}{Bib file}, \href{run:Examples/10-bibtex.tex}{TeX file}, \href{run:Examples/10-bibtex.pdf}{final output}}
-\end{itemize}
+    \begin{itemize}
+        \item Recommended method, according to \texttt{\href{http://www.bibtex.org/Using/}{www.bibtex.org}}\texttt{\footnotesize\\
+        \ \ \ \ 1. pdflatex mydocument\\
+        \ \ \ \ 2. bibtex mybib\\
+        \ \ \ \ 3. pdflatex mydocument\\
+        \ \ \ \ 4. pdflatex mydocument\\
+        }
+        \item Don't like that?\\
+        \ \ \ \ \ \ \texttt{\footnotesize\url{http://users.phys.psu.edu/~collins/latexmk/}}
+    \end{itemize}
+    \note{ Why?\\
+        1. document with question marks for unknown references\\
+        2. parse all the .bib files, generate info regarding references\\
+        3. generate document with references in the correct places\\
+        4. just in case if adding references broke page numbering\\
+    }
+\end{frame}
+
+\begin{frame} \frametitle{BibTeX Demos}
+    BibTeX citations are widely used in academics and available for free from ACM digital library, IEEE Xplore, and other libraries.\\
+    \begin{itemize}
+        \item \texttt{\href{http://goo.gl/oyeyzr}{ACM demo}
+        \item \href {http://goo.gl/4QycmW}{IEEE Xplore Demo}} 
+    \end{itemize}
+    Example bibliography and cited document:
+    \begin{itemize}
+        \item \texttt{\href{run:Examples/10-bibtex.bib}{bibliography}
+        \item \href{run:Examples/10-bibtex.tex}{cited document} 
+        \item \href{run:Examples/10-bibtex.pdf}{final output}}
+    \end{itemize}
 \end{frame}
 
 \section{Useful Packages}
