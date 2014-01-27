@@ -5,7 +5,7 @@ else
 ifeq ($(UNAME), Linux)
 	OPENCMD=xdg-open presentation.pdf
 else
-	OPENCMD=
+	OPENCMD=start presentation.pdf
 endif
 endif
 
@@ -15,6 +15,7 @@ TEX = pdflatex -file-line-error -interaction=nonstopmode
 BIB = bibtex
 
 DOC=presentation
+EXAMPLE=10-bibtex
 
 all: $(DOC).pdf
 
@@ -26,11 +27,11 @@ open: $(DOC).pdf
 	$(OPENCMD)
 
 bib:
-	-cd Examples && pdflatex 10-bibtex
-	-cd Examples && bibtex 10-bibtex
-	-cd Examples && pdflatex 10-bibtex
-	-cd Examples && pdflatex 10-bibtex
-	-cd Examples && pdflatex 10-bibtex
+	-cd Examples && $(TEX) $(EXAMPLE) 
+	-cd Examples && $(BIB) $(EXAMPLE) 
+	-cd Examples && $(TEX) $(EXAMPLE) 
+	-cd Examples && $(TEX) $(EXAMPLE) 
+	-cd Examples && $(TEX) $(EXAMPLE) 
 
 clean:
-	rm -f $(DOC).aux $(DOC).log $(DOC).out $(DOC).pdf $(DOC).nav $(DOC).snm $(DOC).synctex.gz $(DOC).toc Examples/*.log Examples/*.aux Examples/*.pdf Examples/*.synctex.gz Examples/*.bbl Examples/*.blg Examples/*.dvi 
+	rm -f *.{aux, log, out, pdf, nav, snm, synctex.gz, toc} */*.{log, aux, pdf, synctex.gz, bbl, blg, dvi, out}
