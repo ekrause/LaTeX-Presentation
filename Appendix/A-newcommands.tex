@@ -1,0 +1,39 @@
+% this file contains examples of how to create and use new functions, with and without input arguments
+
+\documentclass{article}
+\usepackage{hyperref}
+
+% arguments in latex functions in large part are nothing more than text strings, which are then expanded inside the function
+
+% a function with no arguments
+\newcommand{\sauerheader}[0] % the [0] indicates this function takes no arguments
+{
+	\begin{center}
+	Eric Krause \hfill 
+	\texttt{\href{https://github.com/ekrause}{<github>}} \hfill 
+	\texttt{\href{http://www.sauerkrause.org}{<blag>}}
+	\vspace*{-8pt}\\ 
+	\hspace*{-18pt} 
+	\hrulefill\\
+	\end{center}
+}
+
+\newcommand{\quickequation}[2] % this function takes 2 arguments
+{
+	\textit{#1} $#2$ % #1 and #2 indicate where the arguments should be expanded. 
+}
+
+\begin{document}
+
+\sauerheader % even though there are no args, empty braces are required
+
+Here's a little function that prints its first argument in italic, then interprets its second arg in math mode.\\ 
+
+% here we use the equation, passing each argument inside curly braces
+\quickequation{Area of a Circle}{A = \pi r ^2}\\
+  
+
+% one or more arguments can be left blank, but empty curly braces for each are still required
+\quickequation{}{\pi r ^2}
+
+\end{document}
