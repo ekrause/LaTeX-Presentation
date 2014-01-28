@@ -17,9 +17,9 @@ BIB = bibtex
 DOC=presentation
 EXAMPLE=10-bibtex
 
-all: $(DOC).pdf
+all: $(DOC).pdf bib
 
-$(DOC).pdf: $(DOC).tex $(EXFILES)
+$(DOC): $(DOC).tex $(EXFILES)
 	$(TEX) $(DOC)
 	$(TEX) $(DOC)
 
@@ -34,4 +34,5 @@ bib:
 	-cd Examples && $(TEX) $(EXAMPLE) 
 
 clean:
-	rm -f *.{aux, log, out, pdf, nav, snm, synctex.gz, toc} */*.{log, aux, pdf, synctex.gz, bbl, blg, dvi, out}
+	-rm -f *.aux *.log *.out *.pdf *.nav *.snm *.synctex.gz *.toc
+	-rm -f */*.log */*.aux */*.pdf */*.synctex.gz */*.bbl */*.blg */*.dvi */*.out
