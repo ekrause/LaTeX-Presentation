@@ -17,11 +17,14 @@ BIB = bibtex
 DOC=presentation
 EXAMPLE=10-bibtex
 
-all: $(DOC).pdf bib
+all: $(DOC) bib
 
 $(DOC): $(DOC).tex $(EXFILES)
 	$(TEX) $(DOC)
 	$(TEX) $(DOC)
+
+flyer:
+	$(TEX) flyer.tex
 
 open: $(DOC).pdf
 	$(OPENCMD)
