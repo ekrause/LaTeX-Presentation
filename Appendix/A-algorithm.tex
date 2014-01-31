@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\begin{document}
+
+A basic algorithm:\\
+\begin{algorithmic}
+\If {$i\geq maxval$}
+    \State $i\gets 0$
+\Else
+    \If {$i+k\leq maxval$}
+        \State $i\gets i+k$
+    \EndIf
+\EndIf
+\end{algorithmic}
+
+\vfill		
+
+A captioned algorithm:\\
+\begin{algorithm}
+    \caption{Determining if a 32-bit immediate value can be generated}
+    \begin{algorithmic}
+        \Require{\emph{Value} is the desired immediate number}
+        \Statex
+        \Function{ImmediateTest}{\emph{Value}}
+        \For{$(i = 0$ to $32$ incremented by $2)$ }
+            \If{\emph{Value}[31:8] = 0}
+                \State \Return{True} \Comment{ Value can be generated}
+            \Else
+                \State Rotate \emph{Value} right 2 bits
+            \EndIf
+        \EndFor
+        \State \Return{False} \Comment{ Value cannot be generated}
+        \EndFunction
+    \end{algorithmic}
+\end{algorithm}
+
+
+\end{document}

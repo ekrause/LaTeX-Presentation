@@ -1,4 +1,10 @@
-\documentclass{beamer}
+\ifdefined\speakernotes
+	\documentclass[notes=only]{beamer}
+\else
+	\documentclass{beamer}
+\fi
+
+
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
@@ -7,33 +13,34 @@
 
 
 % Beamer config
-\setbeameroption{show notes} % {show notes} = print speaker notes
 \usefonttheme{serif}
 \usetheme{Berkeley}
 \usecolortheme{seahorse}
-
-
 
 % Set listings defaults
 \lstset{    language=[LaTeX]TeX, 
             basicstyle=\scriptsize, 
             keywordstyle=\bfseries\color{blue}, 
             commentstyle=\it \color{red}, 
-            stringstyle=\ttfamily, 
             numbers=left, 
-            alsoletter={\textbackslash}
+            alsoletter={\textbackslash},
             numberstyle=\tiny\color{mygray}, 
             numbersep=3pt, 
-            literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 {\\}{{{\bf\color{blue}\textbackslash}}}1 {\$}{{{\bf\color{magenta}\$}}}1 {\&}{{{\bf\color{orange}\&}}}1, 
+            literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 {\\}{{{\bf\color{blue}\textbackslash}}}1 {\$}{{{\bf\color{magenta}\$}}}1 {\&}{{{\bf\color{orange}\&}}}1 {\~}{{{\bf\color{blue}$\sim$}}}1, 
             breaklines=true, 
-            morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \bf, \it, \color, \tiny,\footnotesize, \label, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
+            morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \cite, \bibliography, \bibliographystyle, \bf, \it, \color, \tiny,\footnotesize, \label, \textwidth, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
         }
 
 % define some commands
 
+\newcommand{\snip}[1]
+{
+	\lstinputlisting[basicstyle=\normalsize, numbers=none]{Snippets/#1}
+}
+
 % \codeframe:  creates a frame with code on left and result (image) on right
-% args: 1=Title on frame, 2=path to source, 3=path to image
-\newcommand{\codeframe}[4]
+% args: 1=Title on frame, 2=example name, 3=starting line, 4=ending line, 5=notes
+\newcommand{\codeframe}[5]
 {
     \begin{frame} \frametitle{#1}
         \begin{columns}[T]
@@ -44,21 +51,15 @@
                 \textbf{Output}
                 \fbox{\includegraphics[width=\textwidth]{Examples/#2.png}}
         \end{columns}
+        \note{#5}
     \end{frame}
 }
 
-% \pc:  (stands for print command) having to type \textbackslash \{ \} every 
+% \pc:  (print command) having to type \textbackslash \{ \} every 
 % time I want to include a LaTeX command is horrible.  This makes it less horrible.
 \newcommand{\pc}[1]
 {
     \texttt{\textbackslash #1}
-}
-
-% \pca:  (stands for print command (arg)) having to type \textbackslash \{ \} every 
-% time I want to include a LaTeX command is horrible.  This makes it less horrible.
-\newcommand{\pca}[2]
-{
-    \texttt{\textbackslash #1\{#2\}}
 }
 
 % Presentation Title block
@@ -135,9 +136,11 @@
 
 
 \codeframe{Hello \LaTeX!}{1-hello}{1}{16}
+{-always have to state the class or type of the thing you are writing (book, article, etc...)\\title, author, date store information about your document to use later.\\ the actual document content (anything appearing on the page) happens between begin/end document.\\on line 8 the stored info is used in creation of title page}
 
-\begin{frame} \frametitle{Syntax Example}
+\begin{frame} \frametitle{Function Syntax}
     \includegraphics[width=\textwidth]{Examples/0-syntax.png}
+    \note{-If not giving any optional arguments, don't need to include the empty set of brackets and in my code I do not.\\-If more than one optional argument, comma separated list\\-If there were more required arguments, each would be in a set of curly braces. }
 \end{frame}
 
 \begin{frame} \frametitle{Spaces and Escaped Characters}
@@ -161,25 +164,31 @@
         \#                  & reference arguments in functions      & \pc{\#}                   \\\hline
         \textasciitilde     & insert unbreakable space              & \pc{textasciitilde}       \\\hline
     \end{tabular}
-    \note{point out that spaces are ignored and the difference between line breaking and paragraph breaking. not going to go through this in detail, basically backslash is escape character and also designates the start of a command or function.  }
+    \note{-Spaces are ignored\\-Difference between line breaking and paragraph breaking is that paragraph breaks cause an indent.\\-Not going to go through this in detail, basically backslash is escape character and also designates the start of a command or function.\\-If you try to type one of these and don't escape it you will likely have problems}
 \end{frame}
 
 
 \section{Formatting}
 
 \codeframe{Common Text Formatting}{2-formatting}{4}{10}
+{-Text bold font, text italic font, emphasize, underline, text typewriter text\\-Emph takes into account the format where it is used instead of always blindly italisizing}
 
 \codeframe{Sections and Subsections}{3-section}{5}{16}
+{can nest as much as you like.\\numbers tracked automatically unless using starred version of command.\\if there were another section after Appendix, it would be section 4. (TODO: confirm this)}
 
 \codeframe{Lists}{4-lists}{4}{19}
+{can nest as much as you like, but must end environments in the order they are started.  i.e. description enum item ... item enum description}
 
 \begin{frame}
     \frametitle{Formatting Miscellanea}
-    \begin{description}
-        \item[Quotes] Backtick (\ \`\ ) for open quote, single quote (\ \'\ ) for close quote.  `single' or ``double''
-        \item[Centering] \pca{begin}{center}\\ centered text\\ \pca{end}{center}
-        \item[Verbatim] \pca{begin}{verbatim}\\ \ \ \ \ won't be parsed by \textbackslash LaTeX\\ \ \ \ \ great for console output\\\pca{end}{verbatim} 
-    \end{description}
+    \begin{itemize}
+    \item Quotes:\\
+    Backtick (\ \`\ ) for open quote, single quote (\ \'\ ) for close quote.  `single' or ``double''\\
+    \item Centering\\
+    	\snip{center.tex}
+    \item Verbatim\\
+     \snip{verbatim.tex}
+    \end{itemize} 
 \end{frame}
 
 
@@ -187,8 +196,10 @@
 
 \begin{frame} \frametitle{Math Mode}
     \begin{itemize}
-        \item Begin/end inline equations with \$.
-        \item Begin/end display equations with \pca{begin}{equation} and \pca{end}{equation}.
+        \item Begin and end \underline{inline} equations:
+        \begin{itemize} \snip{inline.tex} \end{itemize}
+        \item Begin and end \underline{display} equations:
+        \begin{itemize} \snip{displayequation.tex} \end{itemize}
         \item Symbols accessed directly from the keyboard:  
         \begin{itemize} \item \textit{+ - = ! / ( ) [ ] $< >$ $|$ $'$ :} \end{itemize}
         \item \textbf{Dextrify to the rescue!}
@@ -204,7 +215,7 @@
     Source:
     \lstinputlisting[basicstyle=\tiny, firstline=6, lastline=15]{Examples/5-math.tex}
     
-    \note{probably too small to see, but this serves as a basic example.  Math is one of the strongest features in LaTeX, it can handle anything.}
+    \note{- usepackage{mathtools} required for dfrac (double line fraction)\\- probably too small to see, but this serves as a basic example.  Math is one of the strongest features in LaTeX, it can handle anything.}
 \end{frame}
 
 
@@ -220,7 +231,7 @@
 
 \begin{frame} \frametitle{Beginning A Tabular Environment}
     Started using the following command:\\
-    \ \ \ \ \ \pca{begin}{tabular}\texttt{\{column specification\}}\\
+    \snip{tabular.tex}
     \begin{itemize}
         \item The environment we are starting is \texttt{tabular}.
         \item The type, location, and alignment of columns and vertical lines is given using the \texttt{column specification}
@@ -260,8 +271,9 @@
     \begin{frame}
     \frametitle{Importing Graphics}
     \begin{itemize}
-        \item \texttt{\textbackslash usepackage graphicx}
-        \item Once \texttt{graphics} is included, images are imported using:\\\vspace{6pt}\pc{includegraphics}\textit{[optional params]}\{image name\}\vspace{6pt}
+        \item \snip{graphicx.tex}
+        \item Once \texttt{graphicx} is included, images are imported using:\\	
+        \snip{includegraphics.tex}
         \item Useful optional parameters:
         \begin{itemize}
             \item width=xx --- manual width
@@ -270,13 +282,14 @@
             \item scale=xx --- manual scaling
         \end{itemize}
             
-        \item width=\pc{textwidth}: full-page-width picture
-        \item width=0.5\pc{textwidth}: half-page-width picture
+        \item \snip{textwidth.tex}\ \\
+        \item \snip{05textwidth.tex}
     \end{itemize}
     \note{LaTeX cannot manage pictures directly, must use the \texttt{graphicx} package. Add to preamble of document:\\ }
 \end{frame}
 
 \codeframe{Includegraphics Example}{7-images}{1}{6}
+{pretty self explanatory... look at this cat.}
 
 
 \section{Floats}
@@ -292,14 +305,13 @@
 
 \begin{frame} \frametitle{Float Placement}
     \textbf{Format:}\\
-    \pca{begin}{figure}\textit{[placement specifier]}\\
-    \ \ \pc{label} \{fig:cat\}\\
-    \ \ \pc{caption} \{ this is a photo of a cat \}\\
-    \ \ ... figure contents ...\\
-    \pca{end}{figure}
+    
+    
+	\snip{snip_float.tex}
 
     \begin{itemize}
-        \item Placement Specifiers 
+        \item To get number of the float: \snip{ref.tex}  
+        \item Placement Specifiers: 
         \begin{itemize}
             \item h --- Place the float (approximately) here
             \item t --- Position at the top of the page.
@@ -308,30 +320,28 @@
             \item ! --- Override internal parameters LaTeX uses for determining "good" float positions.
         \end{itemize}
     \end{itemize}
-    \note{Label and caption can go before or after figure contents. 
-}
 \end{frame}
 
 \codeframe{Floats Example}{8-floats}{6}{23}
+{Label and caption can go before or after figure contents.\\a common contention is to use the type:description naming style for labels.  This is probably because using ref(thing) doesn't tell you its type... so this way, you (and others) know what you are referencing just from its name}
 
 
 \section{Code Listings}
     \begin{frame}
     \frametitle{Listings}
     \begin{itemize}
-    	\item \pca{usepackage}{listings}
+    	\item \snip{uselistings.tex}
         \item Made specifically for listing source code. 
         \item Syntax highlighting for all common languages.
         \item (Bad) Write/paste code into \LaTeX\ document: \\
-        \ \ \ \ \pca{begin}{lstlisting}\\ \ \ \ \ \ \ \ \ Put your code here\\ \ \ \ \ \pca{end}{lstlisting}
+        \snip{lstlisting.tex}
         \item (Good) Reference original source file: \\
-        \ \ \ \ \pc{lstinputlisting}\texttt{[options]\{path\_to\_file\}}
+        	\snip{lstinputlisting.tex}
         \item \url{http://en.wikibooks.org/wiki/LaTeX/Source\_Code\_Listings\#Settings}
     \end{itemize}
     \note{The verbatim environment is useful for non-formatted text like console output but with listings you will get beautiful syntax highlighting that looks good printed in color or b/w, or on screen}
 \end{frame}
 
-%\codeframe{Listing Example}{9-listings}{3}{20}
 \begin{frame} \frametitle{Preferred Listing Settings}
     \textbf{Source}\\
     \lstinputlisting[firstline=3, lastline=20]{Examples/9-listings.tex}
@@ -349,13 +359,12 @@
   \begin{enumerate}
     \item Create a bibliography (.bib) file\\
     \lstinputlisting[firstline=6, lastline=14]{Examples/10-bibtex.bib} 
-    \item Cite source:\footnotesize\\
-    \ \ \ \ $\sim$\pca{cite}{Meyer2000}\\\normalsize
-    \item  Include at end of document: \\\footnotesize
-	\ \ \ \ \pca{bibliography}{bibfilename} \\
-	\ \ \ \ \pca{bibliographystyle}{plain}\normalsize
+    \item Cite source:\\
+    	\snip{cite.tex}
+    \item  Include at end of document: \\
+    	\snip{bibstyle.tex}
 	\item Compile (with BibTeX)
-    %\item \href{run:Examples/10-bibtex.bib}{click here}
+
   \end{enumerate}
 \end{frame}
 
@@ -392,11 +401,33 @@
     \end{itemize}
 \end{frame}
 
-\section{Appendix}
-\begin{frame} \frametitle{Appendix}
+\section{Conclusion}
+
+\begin{frame}\frametitle{Resources and Appendix}
+\begin{itemize}
+\item The source code from this presentation is provided
+\item All example code (anything with line numbers) is provided in Examples/
+\item Additional examples (omitted from presentation) located in Appendix/
 	\begin{itemize}
-		\item 
+		\item Custom sizing
+		\item Algorithms
+		\item Defining new functions
 	\end{itemize}
+\item First places to go for help:\\
+\begin{itemize}
+\item \url{http://detexify.kirelabs.org/}
+\item \url{http://en.wikibooks.org/wiki/LaTeX}
+\item \url{http://tex.stackexchange.com/}
+\item \url{http://lmgtfy.com/?q=listings+latex}
+\end{itemize}
+\end{itemize}
 \end{frame}
+
+\begin{frame} \frametitle{Questions?}
+\begin{center}
+	\includegraphics[width=.7\textwidth]{Examples/doge.jpg}
+	\end{center}
+\end{frame}
+
 \end{document}
        

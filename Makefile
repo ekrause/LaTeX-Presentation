@@ -9,7 +9,7 @@ else
 endif
 endif
 
-EXFILES = $(wildcard Examples/*.tex)
+EXFILES = $(wildcard */*.tex)
 
 TEX = pdflatex -file-line-error -interaction=nonstopmode
 BIB = bibtex
@@ -22,6 +22,13 @@ all: $(DOC) bib
 $(DOC): $(DOC).tex $(EXFILES)
 	$(TEX) $(DOC)
 	$(TEX) $(DOC)
+
+notes: 	$(DOC).tex $(EXFILES)
+	$(TEX) "\def\speakernotes{1} \input{$(DOC)}"
+	$(TEX) "\def\speakernotes{1} \input{$(DOC)}"
+
+
+
 
 flyer:
 	$(TEX) flyer.tex
