@@ -1,0 +1,97 @@
+% RECCOMENDED PACKAGES:
+
+    % Graphicx:  contains many improvements to graphics package. Enables 
+    % including pictures in LaTeX and allows optional placement specifiers
+    \usepackage{graphicx} 
+
+    % Float: among other things, exposes the H placement specifier, which places 
+    % a float at the precise location where it is included in the LaTeX code.
+    \usepackage{float}
+
+    % Hyperref:  provides the ability to create hyperlinks within the document
+    \usepackage[
+        colorlinks=true,    % use colored links, not colored boxes AROUND links
+        linkcolor=black,    % color of internal links (sections, pages, etc.)
+        urlcolor=blue       % color of URL links (mail, web)
+    ]{hyperref}
+
+    % Geometry:  One of the most versatile packages for controlling page layout
+    \usepackage[
+        letterpaper,        % standard US 8.5 by 11 inches paper size 
+        margin=1.0in        % set page margins
+    ]{geometry}
+
+    % Lastpage:  exposes total page count of document, enables "Page X of Y" 
+    % notation:  \thepage\ of \pageref{LastPage}
+    \usepackage{lastpage}
+
+
+    \usepackage[
+        usenames,           % allows named use of the 16 default HTML colors
+        dvipsnames          % enables an additional 64 colors (goo.gl/bBroJN)
+    ]{color}
+
+
+    % Listings:  the listings package enables inclusion of formatted source code
+    \usepackage{listings}
+    \lstset{
+        %language=         Python,              % set default language here
+        basicstyle=       \footnotesize,        % slightly smaller than normal
+        breaklines=       true,                 % enable automatic line breaking
+        commentstyle=     \it\color{ForestGreen}, % green, italic comments  
+        keywordstyle=     \bf\color{RoyalBlue},   % bold, blue keywords
+        stringstyle=      \ttfamily\color{Plum},  % monospaced purple strings
+        numbers=          left,                 % line numbers at left
+        numberstyle=      \tiny\color{Gray},    % tiny gray line numbers
+        showstringspaces= false,                % do not show _ instead of space
+        frame=            single,               % put the code in a box
+        %morekeywords=     {},                   % use to add keywords if needed        
+    }
+
+    % Verbatim:  exposes the \verbatiminput{} command for verbatim inclusion
+    % of an entire file
+    \usepackage{verbatim}
+
+% USEFUL COMMANDS:
+
+% Center Image Command
+%	Arg1: Graphic to insert (\includegraphics[width=\textwidth]{path_to_file})
+%	Arg2: Caption for Graphic
+%   Arg3: Label for Graphic
+\newcommand{\centerimage}[3]{
+    \begin{figure}[ht!]  
+        \begin{center}
+            #1
+            \caption{#2}
+            \label{#3}
+        \end{center}
+    \end{figure}
+}
+
+% Side by Side Pictures Command: 
+%	Arg1: Graphic1 insert (\includegraphics[width=\textwidth]{path_to_file_1})
+%	Arg2: Caption for Graphic1
+%   Arg3: Label for Graphic1 
+%	Arg1: Graphic2 insert (\includegraphics[width=\textwidth]{path_to_file_2})
+%	Arg2: Caption for Graphic2
+%   Arg3: Label for Graphic2 
+\newcommand{\picsidebyside}[6]{
+    \begin{figure}[ht]            
+        \begin{minipage}[b]{0.5\linewidth}
+            \centering
+            #1
+            \caption{#2}
+            \label{#3}
+        \end{minipage}
+        
+        \hspace{0.5cm}
+        
+        \begin{minipage}[b]{0.5\linewidth}
+            \centering
+            #4 
+            \caption{#5}
+            \label{#6}
+        \end{minipage}
+    \end{figure}
+}
+

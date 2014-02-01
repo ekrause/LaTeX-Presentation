@@ -1,0 +1,29 @@
+\documentclass{article}
+
+% to use your own header, include it as any other package, but specify
+% the entire path.  In other words, the following will only work if 
+% krause.sty is in the same directory as this document  
+\usepackage{./krause}
+\begin{document}
+
+\noindent The \texttt{krause} header includes the following packages: \texttt{ 
+\begin{itemize} 
+	\item graphicx
+	\item float
+	\item hyperref
+	\item geometry
+	\item lastpage
+	\item color
+	\item listings
+	\item verbatim
+\end{itemize}}
+\noindent Various optional parameters for these packages are also set.\\\\
+Additionally, it defines the following commands:
+\begin{description}
+	\item[centerimage](Graphic to insert) (caption) (label)\
+		\\\textit{Inserts a single, centered picture with the specified label and caption.  \\Argument 1 expects an includegraphics command, such as:}
+		\begin{verbatim}     \includegraphics[width=\textwidth]{path_to_file_1}\end{verbatim}
+	\item[picsidebyside](Graphic 1) (caption 1) (label 1) (graphic 2) (caption 2) (label 2)
+		\\\textit{Inserts two pictures (side by side) with the specified labels and captions.}		
+\end{description}
+\end{document}
