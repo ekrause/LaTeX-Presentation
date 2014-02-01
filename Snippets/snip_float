@@ -1,4 +1,0 @@
-\begin{figure} [placement specifier] \label {fig:cat}
-\caption { this is a photo of a cat }
-%... figure contents ...
-\end{figure}
