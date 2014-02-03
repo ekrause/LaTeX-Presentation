@@ -7,5 +7,5 @@ def bogo(x):
         count = count + 1
 
     # once sorted, return!
-    print "Sorted! Attemps: " + count
+    print "Sorted! Attempts: " + count
     return x
