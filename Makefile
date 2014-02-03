@@ -25,8 +25,8 @@ $(DOC): $(DOC).tex $(EXFILES)
 	$(TEX) $(DOC)
 
 notes: 	$(DOC).tex $(EXFILES)
-	$(TEX) "\def\speakernotes{1} \input{$(DOC)}"
-	$(TEX) "\def\speakernotes{1} \input{$(DOC)}"
+	$(TEX) -jobname notes "\def\speakernotes{1} \input{$(DOC)}"
+	$(TEX) -jobname notes "\def\speakernotes{1} \input{$(DOC)}"
 
 flyer: flyer.tex
 	$(TEX) flyer.tex
