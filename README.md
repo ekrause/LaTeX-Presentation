@@ -5,7 +5,7 @@ How Do LaTeX?
 
 ### What is this?
 How Do LaTeX? is a presentation on the basics of LaTeX given at Portland State University on
-behalf of myself and the local Eta Kappa Nu (HKN) chapter. 
+behalf of myself Portland State University's local Eta Kappa Nu (HKN) chapter, Iota Theta. 
 
 This presentation and supporting documents form the basis for a short seminar covering a very broad overview of basic LaTeX concepts.  The goal of this project is to get people using LaTeX in a relatively painless manner, by covering the topics that common users reqire.
 
