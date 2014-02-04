@@ -22,9 +22,9 @@ With the material covered in this presentation, you should have all the informat
 - automatic bibliography generation
 
 ### What else is there?
-All the code used in the presentation itself lives in the **Examples/** directory.  All of it compiles and works on its own, though admittedly some of these examples are very basic.
+All the code used in the presentation itself lives in the **[Examples/]** directory.  All of it compiles and works on its own, though admittedly some of these examples are very basic.
 
-Additionally, checkout the **Appendix/** directory.  None of the material there is covered in the presentation, but there are some helpful things there, including a pre-written header file that has useful packages and commands already included.  
+Additionally, checkout the **[Appendix/]** directory.  None of the material there is covered in the presentation, but there are some helpful things there, including a pre-written header file that has useful packages and commands already included.  
 
 ### How do I install this?
 ```
@@ -38,3 +38,5 @@ Please [contact me] or make a pull request.
 
 [contact me]:mailto:eric+howdolatex@sauerkrause.org
 [LaTeX]:http://www.latex-project.org/
+[Examples/]:https://github.com/ekrause/LaTeX-Presentation/tree/master/Examples
+[Appendix/]:https://github.com/ekrause/LaTeX-Presentation/tree/master/Appendix
