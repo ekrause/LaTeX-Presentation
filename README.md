@@ -26,6 +26,8 @@ All the code used in the presentation itself lives in the **[Examples/]** direct
 
 Additionally, checkout the **[Appendix/]** directory.  None of the material there is covered in the presentation, but there are some helpful things there, including a pre-written header file that has useful packages and commands already included.  
 
+Finally, take a look at the source code for the presentation itself, there's all kinds of crazy stuff in there!
+
 ### How do I install this?
 ```
 git clone https://github.com/ekrause/LaTeX-Presentation.git
