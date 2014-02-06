@@ -7,7 +7,7 @@ How Do LaTeX?
 How Do LaTeX? is a presentation on the basics of LaTeX given at Portland State University on
 behalf of myself Portland State University's local Eta Kappa Nu (HKN) chapter, Iota Theta. 
 
-This presentation and supporting documents form the basis for a short seminar covering a very broad overview of basic LaTeX concepts.  The goal of this project is to get people using LaTeX in a relatively painless manner, by covering the topics that common users reqire.
+This presentation and supporting documents form the basis for a short seminar covering a very broad overview of basic LaTeX concepts.  The goal of this project is to get people using LaTeX in a relatively painless manner, by covering the topics that common users require.
 
 ### What is LaTeX?
 [LaTeX] is a cross-platform, free, high-quality typesetting system designed for the production of technical and scientific documentation and it can have a bit of a learning curve. It is the de facto standard for the communication and publication of scientific documents, but it is quite different to use when compared to conventional What You See Is What You Get editors such as Microsoft Word. 
