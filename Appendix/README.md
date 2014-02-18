@@ -2,7 +2,7 @@ Appendix
 =======
 
 ### What is this?
-This appendix is included to give working examples for a variety of topics that didn't make the cut to be included in the presentation.  The topics here are not necesarrily more advanced than anything in **[/Examples]**. 
+This appendix is included to give working examples for a variety of topics that didn't make the cut to be included in the presentation.  The topics here are not necesarrily more advanced than anything in **[Examples/]**. 
 
 ### What's included here?
 - Makefile:  A very basic LaTeX makefile, with no magic whatsoever. 
