@@ -4,14 +4,13 @@
 	\documentclass{beamer}
 \fi
 
-
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{dtklogos}
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mypurple}{rgb}{0.8,0,0.8}
-
 
 % Beamer config
 \usefonttheme{serif}
@@ -75,7 +74,7 @@
 \section{Why \LaTeX?}
 
 
-\begin{frame} \frametitle{Why use \LaTeX?}
+\begin{frame} \frametitle{Introduction}
     \begin{itemize}
         \item High quality output
         \item Unparalleled math/equation typesetting
@@ -89,7 +88,7 @@
     
     \note{  -- Latex looks amazing.  \\
     		-- MathType doesn't look as horrendous as it used to, but nothing beats latex for refinement/polish.  It is the mathematical typesetting standard in all technical disciplines and in many related fields. publications in math, computer  science, engineering, and physics\\
-            -- bibliography software is usually an extra expense (e.g. EndNote).  BibTex is fast, integrated, and powerful.\\
+            -- bibliography software is usually an extra expense (e.g. EndNote).  \BibTex is fast, integrated, and powerful.\\
             -- once you start working on 20+ page documents with tons of pictures and tables (and partners, but that's another story) Word is simply not a viable option.  And by non-viable, I don't mean hard to use? I mean it will crash.  And if it doesn't, you'll wish it did.\\
             -- Free, works on everything, in most if not all linux repos.\\
             -- plain text: vim, sublime text, notepad++, or even Emacs\\
@@ -134,8 +133,8 @@
             \item If that doesn't work, try touching the screen or using voice commands.
     \end{itemize}
     \note{-file-line-error = file:line:error style messages. -interaction=nonstopmode = go back to command line on error. When pdflatex can't compile a file, it drops into a prompt. I've never used it and always try to get away from there as quickly as possible, usually generating a q.log file in the process.\\
-    - so just use these options for the standard compiler interaction you know and love
-}
+    - so just use these options for the standard compiler interaction you know and love\\
+    - there is a basic makefile in the Appendix}
 \end{frame}
 
 
@@ -377,7 +376,7 @@
 - \textbf{question} what does h! mean?}
 
 
-\section{Code Listings}
+\section{Listings}
     \begin{frame}
     \frametitle{Listings}
     \begin{itemize}
@@ -411,7 +410,7 @@
 \end{frame}
 
 \section{BibTex}
-\begin{frame} \frametitle{Bibliographies with BibTeX}
+\begin{frame} \frametitle{Bibliographies with \BibTeX}
   \begin{enumerate}
     \item Create a bibliography (.bib) file\\
     \lstinputlisting[firstline=6, lastline=14]{Examples/10-bibtex.bib} 
@@ -419,7 +418,7 @@
     	\snip{cite.tex}
     \item  Include at end of document: \\
     	\snip{bibstyle.tex}
-	\item Compile (with BibTeX)
+	\item Compile (with \BibTeX)
 
   \end{enumerate}
   \note{
@@ -429,7 +428,7 @@
 	- I've never used anything other than ``plain''.}
 \end{frame}
 
-\begin{frame} \frametitle{Compiling with BibTeX}
+\begin{frame} \frametitle{Compiling with \BibTeX}
     \begin{itemize}
         \item Recommended method, according to \texttt{\href{http://www.bibtex.org/Using/}{www.bibtex.org}}\texttt{\footnotesize\\
         \ \ \ \ 1. pdflatex mydocument\\
@@ -442,7 +441,7 @@
     \end{itemize}
     \note{ 
     - this is terrible and ugly and there is no good way around it.\\
-    
+    - however there is a BibTeX example in the makefile in the appendix \\
     Why?\\
         1. document with question marks for unknown references\\
         2. parse all the .bib files, generate info regarding references\\
@@ -451,8 +450,8 @@
     }
 \end{frame}
 
-\begin{frame} \frametitle{BibTeX Demo}
-    BibTeX citations are widely used in academics and available for free from ACM digital library, IEEE Xplore, and other libraries.\\
+\begin{frame} \frametitle{\BibTeX Demo}
+    \BibTeX citations are widely used in academics and available for free from ACM digital library, IEEE Xplore, and other libraries.\\
     \begin{itemize}
         \item \texttt{\href{http://goo.gl/oyeyzr}{ACM demo}
         \item \href {http://goo.gl/4QycmW}{IEEE Xplore Demo}} 
@@ -503,31 +502,31 @@
 \end{frame}
 
 \begin{frame} \frametitle{Presented By:}
+
 	\begin{columns}[T]
     	\column{.48\textwidth}	
 			\begin{center}
-				\vspace{.3in}
-				\includegraphics[width=1.3in]{Resources/ekrause.jpg}\\
+				\small
+				\vspace{.2in}\hspace{-.4in}
+				\includegraphics[height=1.1in]{Resources/ekrause.jpg}\\
 				Eric Krause\\
 				\textit{PSU ECE Alumni}\\
-				\texttt{\href{https://github.com/ekrause/LaTeX-Presentation}{-this project on github}}\\
-				\texttt{\href{https://www.sauerkrause.org}{-sauerkrause.org}}\\
-				\texttt{\href{mailto:eric+latex@sauerkrause.org}{-contact me}}
+				\texttt{\href{mailto:eric+latex@sauerkrause.org}{eric@sauerkrause.org}}
+				\texttt{\href{http://www.sauerkrause.org}{http://www.sauerkrause.org}}
 			\end{center}
         \column{.48\textwidth}
         	\begin{center}
-				\includegraphics[width=1in]{Resources/hkn.png}\\
-				Eta Kappa Nu (HKN)\\
-				\textit{Iota Theta\\(PSU Chapter)}\\
-				\texttt{\href{mailto:cwg2@pdx.edu}{-contact us}}
-			\end{center}
-			
-				
+				\small
+				\vspace{-.2in}
+				\includegraphics[height=1.5in]{Resources/hkn.png}\\
+				Cody Gabriel\\
+				\textit{Eta Kappa Nu (HKN)}\\
+				\textit{Iota Theta (PSU Chapter)}\\
+				\texttt{\href{mailto:cwg2@pdx.edu}{cwg2@pdx.edu}}
+			\end{center}	
         \end{columns}
-
+        \begin{center}This presentation and source code available at:\\
+        	\texttt{\href{https://github.com/ekrause/LaTeX-Presentation}{https://github.com/ekrause/LaTeX-Presentation}}\\
+		\end{center}
 \end{frame}
-
-
-
 \end{document}
-       
