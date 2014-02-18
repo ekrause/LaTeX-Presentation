@@ -76,7 +76,7 @@
 \section{Why \LaTeX?}
 
 
-\begin{frame} \frametitle{Introduction}
+\begin{frame} \frametitle{Why use \LaTeX?}
     \begin{itemize}
         \item High quality output
         \item Unparalleled math/equation typesetting
@@ -91,12 +91,12 @@
     \note{  
         -- Latex looks amazing.  \\
         -- MathType doesn't look as horrendous as it used to, but nothing beats latex for refinement/polish.  It is the mathematical typesetting standard in all technical disciplines and in many related fields. publications in math, computer  science, engineering, and physics\\
-        -- bibliography software is usually an extra expense (e.g. EndNote).  \BibTex is fast, integrated, and powerful.\\
+        -- bibliography software is usually an extra expense (e.g. EndNote).  BibTex is fast, integrated, and powerful.\\
         -- once you start working on 20+ page documents with tons of pictures and tables (and partners, but that's another story) Word is simply not a viable option.  And by non-viable, I don't mean hard to use? I mean it will crash.  And if it doesn't, you'll wish it did.\\
         -- Free, works on everything, in most if not all linux repos.\\
         -- plain text: vim, sublime text, notepad++, or even Emacs\\
         -- Tons of packages to do everything: code listing, create graphics, write music, whatever \\
-        -- Most important:  Allows you to focus on content, not formatting.  \\
+        -- Most important:  Allows you to focus on content, not formatting.
     }
 \end{frame}
 
@@ -109,7 +109,10 @@
         \item Afraid of the command line
         \item Weak, lazy, other personal flaws
     \end{itemize}
-    \note{in the beginning it might seem like it's too much work for short documents but with a little practice its really not bad and you'll find yourself using it even for simple things because \textbf{you know it will work every time}.  }
+    \note{
+        -- in the beginning it might seem like it's too much work for short documents \\
+        -- with a little practice its really not bad and you'll find yourself using it even for simple things because \textbf{you know it will work every time}.  
+    }
 \end{frame}
 
 
@@ -136,28 +139,34 @@
             \item Click buttons and/or mash keyboard.  
             \item If that doesn't work, try touching the screen or using voice commands.
     \end{itemize}
-    \note{-file-line-error = file:line:error style messages. -interaction=nonstopmode = go back to command line on error. When pdflatex can't compile a file, it drops into a prompt. I've never used it and always try to get away from there as quickly as possible, usually generating a q.log file in the process.\\
-    - so just use these options for the standard compiler interaction you know and love\\
-    - there is a basic makefile in the Appendix}
+    \note{
+        -file-line-error = file:line:error style messages. \\
+        -interaction=nonstopmode = go back to command line on error. \\
+        -- When pdflatex can't compile a file, it drops into a prompt. I've never used it and always try to get away from there as quickly as possible, usually generating a q.log file in the process.\\
+        -- just use these options for the standard compiler interaction you know and love\\
+        -- there is a basic makefile in the Appendix
+    }
 \end{frame}
 
 
-\codeframe{Hello \LaTeX!}{1-hello}{1}{16}
-{-always have to state the class or type of the thing you are writing (book, article, etc...)\\
-- title, author, date store information about your document to use later.  Anything before begin(document) is the preamble\\ 
-- the actual document content (anything appearing on the page) happens between begin/end document.\\
--on line 8 the stored info is used in creation of title page\\
-\textbf{question}  any guesses on what happens to content after end document?}
+\codeframe{Hello \LaTeX!}{1-hello}{1}{16}{
+    -- always have to state the class or type of the thing you are writing (book, article, etc...)\\
+    -- title, author, date store information about your document to use later.  Anything before begin(document) is the preamble\\ 
+    -- the actual document content (anything appearing on the page) happens between begin/end document.\\
+    -- on line 8 the stored info is used in creation of title page\\
+    -- \textbf{question}  any guesses on what happens to content after end document?
+}
 
 
 \begin{frame} \frametitle{Function Syntax}
     \includegraphics[width=\textwidth]{Examples/0-syntax.png}
     \note{
-    -If not giving any optional arguments, don't need to include the empty set of brackets and in my code I do not.\\
-    -If more than one optional argument, comma separated list (key-value system)\\
-    -If there were more required arguments, each would be in a set of curly braces. \\
-    - Required arguments are positional\\
-    \textbf{question} how do I pass nothing as an argument? }
+        -- If not giving any optional arguments, don't need to include the empty set of brackets and in my code I do not.\\
+        -- If more than one optional argument, comma separated list (key-value system)\\
+        -- If there were more required arguments, each would be in a set of curly braces. \\
+        -- Required arguments are positional\\
+        -- \textbf{question} how do I pass nothing as an argument? 
+    }
 \end{frame}
 
 
@@ -182,33 +191,39 @@
         \#                  & reference arguments in functions      & \pc{\#}                   \\\hline
         \textasciitilde     & insert unbreakable space              & \pc{textasciitilde}       \\\hline
     \end{tabular}
+
     \note{
-    -Spaces are ignored\\
-    -Difference between line breaking and paragraph breaking is that paragraph breaks cause an indent.\\
-    -Not going to go through this in detail, basically backslash is escape character and also designates the start of a command or function.\\
-    -If you try to type one of these and don't escape it you will likely have problems\\
-    \textbf{question} what happens if I escape characters other than these?}
+        -- Spaces are ignored\\
+        -- Difference between line breaking and paragraph breaking is that paragraph breaks cause an indent.\\
+        -- Not going to go through this in detail, basically backslash is escape character and also designates the start of a command or function.\\
+        -- If you try to type one of these and don't escape it you will likely have problems\\
+        \textbf{question} what happens if I escape characters other than these?
+    }
 \end{frame}
 
 
 \section{Formatting}
 
 
-\codeframe{Common Text Formatting}{2-formatting}{4}{10}
-{-Text bold font, text italic font, emphasize, underline, text typewriter text\\-Emph takes into account the format where it is used instead of always blindly italisizing}
+\codeframe{Common Text Formatting}{2-formatting}{4}{10}{
+    -- Text bold font, text italic font, emphasize, underline, text typewriter text\\
+    -- Emph takes into account the format where it is used instead of always blindly italisizing
+}
 
 
 \codeframe{Sections and Subsections}{3-section}{5}{16}{
--can nest as much as you like.\\
--numbers tracked automatically unless using starred version of command.\\
--note that these are for the article document class.  the book class has chapters and possibly more.\\
--if you ever need deeper nesting, there are additional packages to accomplish this.\\
-\textbf{question} what would happen if there were another section after appendix?}
+    -- can nest as much as you like.\\
+    -- numbers tracked automatically unless using starred version of command.\\
+    -- note that these are for the article document class.  the book class has chapters and possibly more.\\
+    -- if you ever need deeper nesting, there are additional packages to accomplish this.\\
+    -- \textbf{question} what would happen if there were another section after appendix?
+}
 
 
 \codeframe{Lists}{4-lists}{4}{19}{
-- can nest as much as you like (no limit like sections), but must end environments in the order they are started.  i.e. description enum item ... item enum description\\
-- description has an optional argument that basically isn't optional.}
+    -- can nest as much as you like (no limit like sections), but must end environments in the order they are started.  i.e. description enum item ... item enum description\\
+    -- description has an optional argument that basically isn't optional.
+}
 
 
 \begin{frame}
@@ -221,8 +236,10 @@
     \item Verbatim\\
      \snip{verbatim.tex}
     \end{itemize} 
-    \note{- the double-quote key will still work but the quotes will not open/close.  Also, depending on compilation and other editor settings, you can see weird things like upside-down question marks where your apostrophes should be\\
-       - verbatim is awesome but don't use it for source code, there are better options covered later. } 
+    \note{
+        -- the double-quote key will still work but the quotes will not open/close.  Also, depending on compilation and other editor settings, you can see weird things like upside-down question marks where your apostrophes should be\\
+       -- verbatim is awesome but don't use it for source code, there are better options covered later. 
+   } 
 \end{frame}
 
 
@@ -244,9 +261,10 @@
         \begin{itemize} \item \url{http://detexify.kirelabs.org/classify.html} \end{itemize}
     \end{itemize}
     \note{
-    -There are lots of symbols in math, very few are accessed using keyboard in LaTeX.  The rest are all commands started with slash.\\
-    -Hard to remember all of them, but with Dextrify they are easy to find if you can draw what you are looking for. \\
-    \textbf{demo} show how dextrify works.}
+        -- There are lots of symbols in math, very few are accessed using keyboard in LaTeX.  The rest are all commands started with slash.\\
+        -- Hard to remember all of them, but with Dextrify they are easy to find if you can draw what you are looking for. \\
+        -- \textbf{demo} show how dextrify works.
+    }
 \end{frame}
 
 
@@ -258,10 +276,11 @@
     \lstinputlisting[basicstyle=\tiny, firstline=6, lastline=15]{Examples/5-math.tex}
     
     \note{
-    - usepackage(mathtools) required for dfrac (double line fraction)\\
-    - probably too small to see, but this serves as a basic example.  Math is one of the strongest features in LaTeX, it can handle anything.\\
-    - can't comprehensively cover math mode here but most of it is just knowing the right commands (many of which are intuitive, frac for fraction), and knowing the commands for the symbols you want (dextrify)\\
-    \textbf{question} why are there slashes after certain words?}
+        -- usepackage(mathtools) required for dfrac (double line fraction)\\
+        -- probably too small to see, but this serves as a basic example.  Math is one of the strongest features in LaTeX, it can handle anything.\\
+        -- can't comprehensively cover math mode here but most of it is just knowing the right commands (many of which are intuitive, frac for fraction), and knowing the commands for the symbols you want (dextrify)\\
+        -- \textbf{question} why are there slashes after certain words?
+    }
 \end{frame}
 
 
@@ -292,9 +311,10 @@
         \end{itemize}
     \end{itemize}
     \note{
-    - width of columns will be automatically fitted to content.\\
-    - there is actually an optional placement suggestion between begin(tabular) and the specification, this is covered later in Floats.\\
-    - Use paragraph columns to manually control column width.  Text will wrap in paragraph columns.\\\textit{(If text flows out of the table, try using this).}}
+        -- width of columns will be automatically fitted to content.\\
+        -- there is actually an optional placement suggestion between begin(tabular) and the specification, this is covered later in Floats.\\
+        -- Use paragraph columns to manually control column width.  Text will wrap in paragraph columns.\\\textit{(If text flows out of the table, try using this).}
+    }
 \end{frame}
 
 
@@ -312,11 +332,12 @@
     \textbf{Sample Table:}
     \lstinputlisting[firstline=5, lastline=11]{Examples/6-tables.tex}
     \note{
-    \textbf{question}\\
-    - what will this table look like? \\ 
-    - How many columns and rows?\\
-    - Justification in each column?\\
-    - Where will lines be?}
+        -- \textbf{question}\\
+            - what will this table look like? \\ 
+            - How many columns and rows?\\
+            - Justification in each column?\\
+            - Where will lines be?
+    }
 \end{frame}
 
 
@@ -346,8 +367,9 @@
         \item \snip{05textwidth.tex}
     \end{itemize}
     \note{
-    - LaTeX cannot manage pictures directly, must use the \texttt{graphicx} package. Include graphicsx in preamble of document\\ 
-    - textwidth is a really great command to know, it is a macro equal to the width of the printable area.  I considered giving it its own slide but just know that dynamically determining widths and heights is nearly always the correct way to do things.}
+        -- LaTeX cannot manage pictures directly, must use the \texttt{graphicx} package. Include graphicsx in preamble of document\\ 
+        -- textwidth is a really great command to know, it is a macro equal to the width of the printable area.  I considered giving it its own slide but just know that dynamically determining widths and heights is nearly always the correct way to do things.
+    }
 \end{frame}
 
 
@@ -382,15 +404,17 @@
         \end{itemize}
     \end{itemize}
     \note{
-    - even with h (here) latex will not stick a float in the middle of a paragraph, it will try to put it somewhere logical like near where it is referenced or at the start/end of a section.\\
-    \textbf{question} what goes in ``figure contents''?}
+        -- even with h (here) latex will not stick a float in the middle of a paragraph, it will try to put it somewhere logical like near where it is referenced or at the start/end of a section.\\
+    \   -- \textbf{question} what goes in ``figure contents''?
+    }
 \end{frame}
 
 
 \codeframe{Floats Example}{8-floats}{6}{23}{
-- Label and caption can go before or after figure contents.\\
-- a common contention is to use the type:description naming style for labels.  This is probably because using ref(thing) doesn't tell you its type... so this way, you (and others) know what you are referencing just from its name\\
-- \textbf{question} what does h! mean?}
+    -- Label and caption can go before or after figure contents.\\
+    -- a common contention is to use the type:description naming style for labels.  This is probably because using ref(thing) doesn't tell you its type... so this way, you (and others) know what you are referencing just from its name\\
+    -- \textbf{question} what does h! mean?
+}
 
 
 \section{Listings}
@@ -407,8 +431,9 @@
         \item \url{http://en.wikibooks.org/wiki/LaTeX/Source\_Code\_Listings\#Settings}
     \end{itemize}
     \note{
-    - The verbatim environment is useful for non-formatted text like console output but with listings you will get beautiful syntax highlighting that looks good printed in color or b/w, or on screen\\
-    \textbf{question} why is it bad to paste code into doc?}
+        -- The verbatim environment is useful for non-formatted text like console output but with listings you will get beautiful syntax highlighting that looks good printed in color or b/w, or on screen\\
+        -- \textbf{question} why is it bad to paste code into doc?
+    }
 \end{frame}
 
 
@@ -416,8 +441,9 @@
     \textbf{Source}\\
     \lstinputlisting[firstline=3, lastline=20]{Examples/9-listings.tex}
     \note{
-    - walk through what each of these all mean.\\
-    - to use these color names, need to use color package with args shown}
+        -- walk through what each of these all mean.\\
+        -- to use these color names, need to use color package with args shown
+    }
 \end{frame}
 
 
@@ -444,10 +470,11 @@
 
   \end{enumerate}
   \note{
-      - bib entries all follow this general format: (at)type, the identifier you choose, then a comma separated key-value list.  All are optional.\\
-    - note that to cite, use the same name that is specified as first argument (Meyer2000, in this case)\\
-    - note the lack of the .bib extension on the bib filename\\
-    - I've never used anything other than ``plain''.}
+        -- bib entries all follow this general format: (at)type, the identifier you choose, then a comma separated key-value list.  All are optional.\\
+        -- note that to cite, use the same name that is specified as first argument (Meyer2000, in this case)\\
+        -- note the lack of the .bib extension on the bib filename\\
+        -- I've never used anything other than ``plain''.
+    }
 \end{frame}
 
 
@@ -463,13 +490,13 @@
         \ \ \ \ \ \ \texttt{\footnotesize\url{http://users.phys.psu.edu/~collins/latexmk/}}
     \end{itemize}
     \note{ 
-    - this is terrible and ugly and there is no good way around it.\\
-    - however there is a BibTeX example in the makefile in the appendix \\
-    Why?\\
-        1. document with question marks for unknown references\\
-        2. parse all the .bib files, generate info regarding references\\
-        3. generate document with references in the correct places\\
-        4. just in case if adding references broke page numbering\\
+        -- this is terrible and ugly and there is no good way around it.\\
+        -- however there is a BibTeX example in the makefile in the appendix \\
+        -- Why?\\
+            1. document with question marks for unknown references\\
+            2. parse all the .bib files, generate info regarding references\\
+            3. generate document with references in the correct places\\
+            4. just in case if adding references broke page numbering\\
     }
 \end{frame}
 
@@ -496,29 +523,30 @@
 
 
 \begin{frame}\frametitle{Additional Resources}
-\begin{itemize}
-\item All example code listed in this presentation (anything with line numbers) located in Examples/
-\item Many additional examples (omitted from presentation) located in Appendix/
     \begin{itemize}
-        \item Custom sizing
-        \item Algorithms
-        \item Defining new functions
-        \item Custom header files
+        \item All example code listed in this presentation (anything with line numbers) located in Examples/
+        \item Many additional examples (omitted from presentation) located in Appendix/
+            \begin{itemize}
+                \item Custom sizing
+                \item Algorithms
+                \item Defining new functions
+                \item Custom header files
+            \end{itemize}
+        \item The source code from this presentation    
+        \item First places to go for help:\\
+        \begin{itemize}
+            \item \url{http://detexify.kirelabs.org/}
+            \item \url{http://en.wikibooks.org/wiki/LaTeX}
+            \item \url{http://tex.stackexchange.com/}
+            \item \url{http://lmgtfy.com/?q=listings+latex}
+        \end{itemize}
     \end{itemize}
-\item The source code from this presentation    
-\item First places to go for help:\\
-\begin{itemize}
-\item \url{http://detexify.kirelabs.org/}
-\item \url{http://en.wikibooks.org/wiki/LaTeX}
-\item \url{http://tex.stackexchange.com/}
-\item \url{http://lmgtfy.com/?q=listings+latex}
-\end{itemize}
-\end{itemize}
-\note{
-- there are working example that include all code seen in this presentation (snippets were shown)\\
-- entire directory of other examples including an already-written header file that contains useful functions and packages\\
-- if interested in presentations, see source code for this one.  Uses a package called Beamer designed for presentations.\\
-- between wikibooks and stack exchange, 99\% of my questions are answered.}
+    \note{
+        -- there are working example that include all code seen in this presentation (snippets were shown)\\
+        -- entire directory of other examples including an already-written header file that contains useful functions and packages\\
+        -- if interested in presentations, see source code for this one.  Uses a package called Beamer designed for presentations.\\
+        -- between wikibooks and stack exchange, 99\% of my questions are answered.
+    }
 \end{frame}
 
 
