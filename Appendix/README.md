@@ -7,6 +7,7 @@ This appendix is included to give working examples for a variety of topics that 
 ### What's included here?
 - Makefile:  A very basic LaTeX makefile, with no magic whatsoever. 
 - A-algorithm.tex:  Some examples of algorithms using LaTeX.
+- A-newcommands.tex:  One of LaTeX's most powerful features is the ability to create and use custom commands/macros.  This example illustrates how this is done.
 - Krause.sty:  A custom "header" file.  The use of such files is reccomended to reduce the size of the document preamble, and this header file includes several useful packages and commands. 
 - A-customheader.tex:  A file that demonstrates how to use a custom header file.
 - A-size.tex:  Illustrates how to manually change font size in LaTeX (and lists all available sizes)
