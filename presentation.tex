@@ -1,7 +1,7 @@
 \ifdefined\speakernotes
-	\documentclass[notes=only]{beamer}
+    \documentclass[notes=only]{beamer}
 \else
-	\documentclass{beamer}
+    \documentclass{beamer}
 \fi
 
 \usepackage{hyperref}
@@ -18,24 +18,25 @@
 \usecolortheme{seahorse}
 
 % Set listings defaults
-\lstset{    language=[LaTeX]TeX, 
-            basicstyle=\scriptsize, 
-            keywordstyle=\bfseries\color{blue}, 
-            commentstyle=\it \color{red}, 
-            numbers=left, 
-            alsoletter={\textbackslash},
-            numberstyle=\tiny\color{mygray}, 
-            numbersep=3pt, 
-            literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 {\\}{{{\bf\color{blue}\textbackslash}}}1 {\$}{{{\bf\color{magenta}\$}}}1 {\&}{{{\bf\color{orange}\&}}}1 {\~}{{{\bf\color{blue}$\sim$}}}1 {\[}{{{\bf\color{mypurple}[}}}1 {\]}{{{\bf\color{mypurple}]}}}1, 
-            breaklines=true, 
-            morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \cite, \bibliography, \bibliographystyle, \bf, \it, \color, \tiny,\footnotesize, \label, \textwidth, \infty, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
-        }
+\lstset{    
+    language=[LaTeX]TeX, 
+    basicstyle=\scriptsize, 
+    keywordstyle=\bfseries\color{blue}, 
+    commentstyle=\it \color{red}, 
+    numbers=left, 
+    alsoletter={\textbackslash},
+    numberstyle=\tiny\color{mygray}, 
+    numbersep=3pt, 
+    literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 {\\}{{{\bf\color{blue}\textbackslash}}}1 {\$}{{{\bf\color{magenta}\$}}}1 {\&}{{{\bf\color{orange}\&}}}1 {\~}{{{\bf\color{blue}$\sim$}}}1 {\[}{{{\bf\color{mypurple}[}}}1 {\]}{{{\bf\color{mypurple}]}}}1, 
+    breaklines=true, 
+    morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \cite, \bibliography, \bibliographystyle, \bf, \it, \color, \tiny,\footnotesize, \label, \textwidth, \infty, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
+}
 
 % define some commands
 
 \newcommand{\snip}[1]
 {
-	\lstinputlisting[basicstyle=\normalsize, numbers=none]{Resources/Snips/#1}
+    \lstinputlisting[basicstyle=\normalsize, numbers=none]{Resources/Snips/#1}
 }
 
 % \codeframe:  creates a frame with code on left and result (image) on right
@@ -71,6 +72,7 @@
 \begin{document}
 \maketitle
 
+
 \section{Why \LaTeX?}
 
 
@@ -86,14 +88,15 @@
         \item \textbf{Focus on content, not formatting}
     \end{itemize}
     
-    \note{  -- Latex looks amazing.  \\
-    		-- MathType doesn't look as horrendous as it used to, but nothing beats latex for refinement/polish.  It is the mathematical typesetting standard in all technical disciplines and in many related fields. publications in math, computer  science, engineering, and physics\\
-            -- bibliography software is usually an extra expense (e.g. EndNote).  \BibTex is fast, integrated, and powerful.\\
-            -- once you start working on 20+ page documents with tons of pictures and tables (and partners, but that's another story) Word is simply not a viable option.  And by non-viable, I don't mean hard to use? I mean it will crash.  And if it doesn't, you'll wish it did.\\
-            -- Free, works on everything, in most if not all linux repos.\\
-            -- plain text: vim, sublime text, notepad++, or even Emacs\\
-            -- Tons of packages to do everything: code listing, create graphics, write music, whatever \\
-            -- Most important:  Allows you to focus on content, not formatting.  \\
+    \note{  
+        -- Latex looks amazing.  \\
+        -- MathType doesn't look as horrendous as it used to, but nothing beats latex for refinement/polish.  It is the mathematical typesetting standard in all technical disciplines and in many related fields. publications in math, computer  science, engineering, and physics\\
+        -- bibliography software is usually an extra expense (e.g. EndNote).  \BibTex is fast, integrated, and powerful.\\
+        -- once you start working on 20+ page documents with tons of pictures and tables (and partners, but that's another story) Word is simply not a viable option.  And by non-viable, I don't mean hard to use? I mean it will crash.  And if it doesn't, you'll wish it did.\\
+        -- Free, works on everything, in most if not all linux repos.\\
+        -- plain text: vim, sublime text, notepad++, or even Emacs\\
+        -- Tons of packages to do everything: code listing, create graphics, write music, whatever \\
+        -- Most important:  Allows you to focus on content, not formatting.  \\
     }
 \end{frame}
 
@@ -108,6 +111,7 @@
     \end{itemize}
     \note{in the beginning it might seem like it's too much work for short documents but with a little practice its really not bad and you'll find yourself using it even for simple things because \textbf{you know it will work every time}.  }
 \end{frame}
+
 
 \section{Getting Started}
 \begin{frame} \frametitle{Downloading and Using \LaTeX}
@@ -145,6 +149,7 @@
 -on line 8 the stored info is used in creation of title page\\
 \textbf{question}  any guesses on what happens to content after end document?}
 
+
 \begin{frame} \frametitle{Function Syntax}
     \includegraphics[width=\textwidth]{Examples/0-syntax.png}
     \note{
@@ -154,6 +159,7 @@
     - Required arguments are positional\\
     \textbf{question} how do I pass nothing as an argument? }
 \end{frame}
+
 
 \begin{frame} \frametitle{Spaces and Escaped Characters}
 \begin{itemize}
@@ -187,8 +193,10 @@
 
 \section{Formatting}
 
+
 \codeframe{Common Text Formatting}{2-formatting}{4}{10}
 {-Text bold font, text italic font, emphasize, underline, text typewriter text\\-Emph takes into account the format where it is used instead of always blindly italisizing}
+
 
 \codeframe{Sections and Subsections}{3-section}{5}{16}{
 -can nest as much as you like.\\
@@ -197,9 +205,11 @@
 -if you ever need deeper nesting, there are additional packages to accomplish this.\\
 \textbf{question} what would happen if there were another section after appendix?}
 
+
 \codeframe{Lists}{4-lists}{4}{19}{
 - can nest as much as you like (no limit like sections), but must end environments in the order they are started.  i.e. description enum item ... item enum description\\
 - description has an optional argument that basically isn't optional.}
+
 
 \begin{frame}
     \frametitle{Formatting Miscellanea}
@@ -207,20 +217,21 @@
     \item Quotes:\\
     Backtick (\ \`\ ) for open quote, single quote (\ \'\ ) for close quote.  `single' or ``double''\\
     \item Centering\\
-    	\snip{center.tex}
+        \snip{center.tex}
     \item Verbatim\\
      \snip{verbatim.tex}
     \end{itemize} 
     \note{- the double-quote key will still work but the quotes will not open/close.  Also, depending on compilation and other editor settings, you can see weird things like upside-down question marks where your apostrophes should be\\
-   	- verbatim is awesome but don't use it for source code, there are better options covered later. } 
+       - verbatim is awesome but don't use it for source code, there are better options covered later. } 
 \end{frame}
 
 
 \section{Math Mode}
 
+
 \begin{frame} \frametitle{Math Mode}
     \begin{itemize}
-    	\item \url{http://en.wikibooks.org/wiki/LaTeX/Mathematics}
+        \item \url{http://en.wikibooks.org/wiki/LaTeX/Mathematics}
         \item Begin and end \underline{inline} equations: \vspace{-6pt}
         \begin{itemize} \snip{inline.tex} \end{itemize}\vspace{-10pt}
         \item Begin and end \underline{display} equations:
@@ -237,6 +248,7 @@
     -Hard to remember all of them, but with Dextrify they are easy to find if you can draw what you are looking for. \\
     \textbf{demo} show how dextrify works.}
 \end{frame}
+
 
 \begin{frame} \frametitle{Math Mode Examples}
     Output:
@@ -255,6 +267,7 @@
 
 \section{Tabular Mode}
 
+
 \begin{frame} \frametitle{Using the Tabular Environment}
     \begin{enumerate}
         \item \textbf{Begin tabular mode} specifying the number of columns, alignment, and vertical lines.
@@ -263,19 +276,20 @@
     \end{enumerate}
 \end{frame}
 
+
 \begin{frame} \frametitle{Beginning A Tabular Environment}
     Started using the following command:\\
     \snip{tabular.tex}
     \begin{itemize}
         \item The environment we are starting is \texttt{tabular}.
         \item The type, location, and alignment of columns and vertical lines is given using the \texttt{column specification}
-	    \begin{itemize}
-	        \item l --- left-aligned column
-	        \item c --- center-aligned column
-	        \item r --- right-aligned column
-	        \item p\{width\} --- paragraph column, must specify width.
-	        \item $|$ --- vertical line ($||$ = double, $|||$ = 	triple ...) 
-	    \end{itemize}
+        \begin{itemize}
+            \item l --- left-aligned column
+            \item c --- center-aligned column
+            \item r --- right-aligned column
+            \item p\{width\} --- paragraph column, must specify width.
+            \item $|$ --- vertical line ($||$ = double, $|||$ =     triple ...) 
+        \end{itemize}
     \end{itemize}
     \note{
     - width of columns will be automatically fitted to content.\\
@@ -283,15 +297,16 @@
     - Use paragraph columns to manually control column width.  Text will wrap in paragraph columns.\\\textit{(If text flows out of the table, try using this).}}
 \end{frame}
 
+
 \begin{frame} \frametitle{Adding Contents}
     \begin{itemize}
-    	\item Once in a tabular environment, table contents, separations between cells, and newlines are entered.\\
-    	\begin{itemize}
-			\item \texttt{\&} --- column separator
-			\item \texttt{\textbackslash\textbackslash} --- start new row
-        	\item \pc{hline} --- horizontal line
-			\item \pc{newline} --- start new line in cell (paragraph cells only)
-		\end{itemize}
+        \item Once in a tabular environment, table contents, separations between cells, and newlines are entered.\\
+        \begin{itemize}
+            \item \texttt{\&} --- column separator
+            \item \texttt{\textbackslash\textbackslash} --- start new row
+            \item \pc{hline} --- horizontal line
+            \item \pc{newline} --- start new line in cell (paragraph cells only)
+        \end{itemize}
     \end{itemize}
     
     \textbf{Sample Table:}
@@ -304,6 +319,7 @@
     - Where will lines be?}
 \end{frame}
 
+
 \begin{frame} \frametitle{Tabular Example}
     Output:
     \includegraphics[width=\textwidth]{Examples/6-tables.png}
@@ -311,11 +327,12 @@
 
 
 \section{Graphics}
-    \begin{frame}
-    \frametitle{Importing Graphics}
+
+
+\begin{frame} \frametitle{Importing Graphics}
     \begin{itemize}
         \item \snip{graphicx.tex}
-        \item Once \texttt{graphicx} is included, images are imported using:\\	
+        \item Once \texttt{graphicx} is included, images are imported using:\\    
         \snip{includegraphics.tex}
         \item Useful optional parameters:
         \begin{itemize}
@@ -333,11 +350,12 @@
     - textwidth is a really great command to know, it is a macro equal to the width of the printable area.  I considered giving it its own slide but just know that dynamically determining widths and heights is nearly always the correct way to do things.}
 \end{frame}
 
-\codeframe{Includegraphics Example}{7-images}{1}{6}
-{}
+
+\codeframe{Includegraphics Example}{7-images}{1}{6}{}
 
 
 \section{Floats}
+
 
 \begin{frame} \frametitle{Floats}
     \begin{itemize}
@@ -348,12 +366,10 @@
     \end{itemize}
 \end{frame}
 
+
 \begin{frame} \frametitle{Float Placement}
     \textbf{Format:}\\
-    
-    
-	\snip{snip_float.tex}\vspace{-6pt}
-
+    \snip{snip_float.tex}\vspace{-6pt}
     \begin{itemize}
         \item To get number of the float: \vspace{-6pt}\snip{ref.tex}  
         \item Placement Specifiers: 
@@ -370,6 +386,7 @@
     \textbf{question} what goes in ``figure contents''?}
 \end{frame}
 
+
 \codeframe{Floats Example}{8-floats}{6}{23}{
 - Label and caption can go before or after figure contents.\\
 - a common contention is to use the type:description naming style for labels.  This is probably because using ref(thing) doesn't tell you its type... so this way, you (and others) know what you are referencing just from its name\\
@@ -377,22 +394,23 @@
 
 
 \section{Listings}
-    \begin{frame}
-    \frametitle{Listings}
+
+\begin{frame} \frametitle{Listings}
     \begin{itemize}
-    	\item \snip{uselistings.tex}
+        \item \snip{uselistings.tex}
         \item Made specifically for listing source code. 
         \item Syntax highlighting for all common languages.
         \item (Bad) Write/paste code into \LaTeX\ document: \\
         \snip{lstlisting.tex}
         \item (Good) Reference original source file: \\
-        	\snip{lstinputlisting.tex}
+            \snip{lstinputlisting.tex}
         \item \url{http://en.wikibooks.org/wiki/LaTeX/Source\_Code\_Listings\#Settings}
     \end{itemize}
     \note{
     - The verbatim environment is useful for non-formatted text like console output but with listings you will get beautiful syntax highlighting that looks good printed in color or b/w, or on screen\\
     \textbf{question} why is it bad to paste code into doc?}
 \end{frame}
+
 
 \begin{frame} \frametitle{Preferred Listing Settings}
     \textbf{Source}\\
@@ -402,31 +420,36 @@
     - to use these color names, need to use color package with args shown}
 \end{frame}
 
+
 \begin{frame} \frametitle{Listings Example}
-	\textbf{Output}\\
-	\begin{center}
-	\includegraphics[width=0.85\textwidth]{Examples/9-listings.png}
-	\end{center}
+    \textbf{Output}\\
+    \begin{center}
+    \includegraphics[width=0.85\textwidth]{Examples/9-listings.png}
+    \end{center}
 \end{frame}
 
+
 \section{BibTex}
+
+
 \begin{frame} \frametitle{Bibliographies with \BibTeX}
   \begin{enumerate}
     \item Create a bibliography (.bib) file\\
     \lstinputlisting[firstline=6, lastline=14]{Examples/10-bibtex.bib} 
     \item Cite source:\\
-    	\snip{cite.tex}
+        \snip{cite.tex}
     \item  Include at end of document: \\
-    	\snip{bibstyle.tex}
-	\item Compile (with \BibTeX)
+        \snip{bibstyle.tex}
+    \item Compile (with \BibTeX)
 
   \end{enumerate}
   \note{
-  	- bib entries all follow this general format: (at)type, the identifier you choose, then a comma separated key-value list.  All are optional.\\
-	- note that to cite, use the same name that is specified as first argument (Meyer2000, in this case)\\
-	- note the lack of the .bib extension on the bib filename\\
-	- I've never used anything other than ``plain''.}
+      - bib entries all follow this general format: (at)type, the identifier you choose, then a comma separated key-value list.  All are optional.\\
+    - note that to cite, use the same name that is specified as first argument (Meyer2000, in this case)\\
+    - note the lack of the .bib extension on the bib filename\\
+    - I've never used anything other than ``plain''.}
 \end{frame}
+
 
 \begin{frame} \frametitle{Compiling with \BibTeX}
     \begin{itemize}
@@ -450,6 +473,7 @@
     }
 \end{frame}
 
+
 \begin{frame} \frametitle{\BibTeX Demo}
     \BibTeX citations are widely used in academics and available for free from ACM digital library, IEEE Xplore, and other libraries.\\
     \begin{itemize}
@@ -467,19 +491,21 @@
     \textbf{demo} show example files quickly}
 \end{frame}
 
+
 \section{Conclusion}
+
 
 \begin{frame}\frametitle{Additional Resources}
 \begin{itemize}
 \item All example code listed in this presentation (anything with line numbers) located in Examples/
 \item Many additional examples (omitted from presentation) located in Appendix/
-	\begin{itemize}
-		\item Custom sizing
-		\item Algorithms
-		\item Defining new functions
-		\item Custom header files
-	\end{itemize}
-\item The source code from this presentation	
+    \begin{itemize}
+        \item Custom sizing
+        \item Algorithms
+        \item Defining new functions
+        \item Custom header files
+    \end{itemize}
+\item The source code from this presentation    
 \item First places to go for help:\\
 \begin{itemize}
 \item \url{http://detexify.kirelabs.org/}
@@ -495,38 +521,39 @@
 - between wikibooks and stack exchange, 99\% of my questions are answered.}
 \end{frame}
 
+
 \begin{frame} \frametitle{Questions?}
 \begin{center}
-	\includegraphics[width=.7\textwidth]{Resources/doge.jpg}
-	\end{center}
+    \includegraphics[width=.7\textwidth]{Resources/doge.jpg}
+    \end{center}
 \end{frame}
 
-\begin{frame} \frametitle{Presented By:}
 
-	\begin{columns}[T]
-    	\column{.48\textwidth}	
-			\begin{center}
-				\small
-				\vspace{.2in}\hspace{-.4in}
-				\includegraphics[height=1.1in]{Resources/ekrause.jpg}\\
-				Eric Krause\\
-				\textit{PSU ECE Alumni}\\
-				\texttt{\href{mailto:eric+latex@sauerkrause.org}{eric@sauerkrause.org}}
-				\texttt{\href{http://www.sauerkrause.org}{http://www.sauerkrause.org}}
-			\end{center}
+\begin{frame} \frametitle{Presented By:}
+    \begin{columns}[T]
+        \column{.48\textwidth}    
+            \begin{center}
+                \small
+                \vspace{.2in}\hspace{-.4in}
+                \includegraphics[height=1.1in]{Resources/ekrause.jpg}\\
+                Eric Krause\\
+                \textit{PSU ECE Alumni}\\
+                \texttt{\href{mailto:eric+latex@sauerkrause.org}{eric@sauerkrause.org}}
+                \texttt{\href{http://www.sauerkrause.org}{http://www.sauerkrause.org}}
+            \end{center}
         \column{.48\textwidth}
-        	\begin{center}
-				\small
-				\vspace{-.2in}
-				\includegraphics[height=1.5in]{Resources/hkn.png}\\
-				Cody Gabriel\\
-				\textit{Eta Kappa Nu (HKN)}\\
-				\textit{Iota Theta (PSU Chapter)}\\
-				\texttt{\href{mailto:cwg2@pdx.edu}{cwg2@pdx.edu}}
-			\end{center}	
+            \begin{center}
+                \small
+                \vspace{-.2in}
+                \includegraphics[height=1.5in]{Resources/hkn.png}\\
+                Cody Gabriel\\
+                \textit{Eta Kappa Nu (HKN)}\\
+                \textit{Iota Theta (PSU Chapter)}\\
+                \texttt{\href{mailto:cwg2@pdx.edu}{cwg2@pdx.edu}}
+            \end{center}    
         \end{columns}
         \begin{center}This presentation and source code available at:\\
-        	\texttt{\href{https://github.com/ekrause/LaTeX-Presentation}{https://github.com/ekrause/LaTeX-Presentation}}\\
-		\end{center}
+            \texttt{\href{https://github.com/ekrause/LaTeX-Presentation}{https://github.com/ekrause/LaTeX-Presentation}}\\
+        \end{center}
 \end{frame}
 \end{document}
