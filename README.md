@@ -35,8 +35,10 @@ make presentation
 open presentation
 ```
 
-### Comments/Complaints/Suggestions/Threats
-Please [contact me] or make a pull request.
+### Comments/Corrections/Complaints/Suggestions/Threats
+If you see any errors or have any improvements: 
+- Create an issue here on Github
+- Fix it yourself and make a pull request and I will merge it in, - -or- [contact me] and I'll fix it myself.
 
 [contact me]:mailto:eric+howdolatex@sauerkrause.org
 [LaTeX]:http://www.latex-project.org/
