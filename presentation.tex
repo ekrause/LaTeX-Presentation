@@ -29,7 +29,7 @@
     numbersep=3pt, 
     literate= {\{}{{{\bf\color{mygreen}\{}}}1 {\}}{{{\bf\color{mygreen}\}}}}1 {\\}{{{\bf\color{blue}\textbackslash}}}1 {\$}{{{\bf\color{magenta}\$}}}1 {\&}{{{\bf\color{orange}\&}}}1 {\~}{{{\bf\color{blue}$\sim$}}}1 {\[}{{{\bf\color{mypurple}[}}}1 {\]}{{{\bf\color{mypurple}]}}}1, 
     breaklines=true, 
-    morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \cite, \bibliography, \bibliographystyle, \bf, \it, \color, \tiny,\footnotesize, \label, \textwidth, \infty, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
+    morekeywords={\title, \documentclass, \author, \date, \begin, \end, \textbf, \textit, \emph, \underline, \texttt, \section, \item, \noindent, \sum, \limits, \infity, \omega, \dfrac, \cdot, \pi, \sqrt, &, \hline, \ref, \usepackage, \includegraphics, \centering, \caption, \cite, \bibliography, \bibliographystyle, \bf, \it, \color, \tiny,\footnotesize, \label, \textwidth, \infty, \footnote, maketitle, subsubsection, subsection, thesection, lstinputlisting, @article, author, title, journal, issue, pages, volume, year}
 }
 
 % define some commands
@@ -456,6 +456,20 @@
 
 
 \section{BibTex}
+\begin{frame} \frametitle{Footnotes and Citations}
+	Two main options for citations:
+	\begin{itemize}
+		\item Footnotes: quick and easy, but not for citing sources.		
+		\item \BibTeX: robust, automated bibliography management.
+	\end{itemize}
+	\vspace{10pt}
+	Footnotes can be easily created inline\footnote{Refer to example below this line to learn how}
+	\lstinputlisting[firstline=4, lastline=4, numbers=none]{Examples/10-footnotes.tex}	
+	\vspace{10pt}
+	Using \BibTeX\ takes a couple more steps...
+
+\end{frame}
+
 
 
 \begin{frame} \frametitle{Bibliographies with \BibTeX}
