@@ -43,4 +43,6 @@ open: $(DOC).pdf
 
 clean:
 	-rm -f $(GENFILES) flyer.pdf
-	-rm -f */$(GENFILES) */*.pdf	
+	-mv Examples/10-bibtex.pdf .
+	-rm -f */$(GENFILES) */*.pdf
+	-mv 10-bibtex.pdf Examples/
